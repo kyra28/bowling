@@ -4,13 +4,13 @@ public class Bowling {
 	
 	public int[][] values; 
 	int ind;
-	public int[] bonusSpaire;
+	public int[] bonusSpare;
 	public int[][] bonusStrike;
 
 	public Bowling()
 	{
 		values = new int[10][2];
-		bonusSpaire = new int[2];
+		bonusSpare = new int[2];
 		bonusStrike = new int[2][2];
 		ind = 0;
 	}
@@ -18,7 +18,7 @@ public class Bowling {
 	public Bowling(int size)
 	{
 		values = new int[10][2];
-		bonusSpaire = new int[2];
+		bonusSpare = new int[2];
 		bonusStrike = new int[2][2];
 		ind = 0;
 		for(int i=0; i<10; i++)
@@ -62,13 +62,13 @@ public class Bowling {
 			}
 			
 			else { // dernier coup = spaire
-				bonusSpaire[0] = (int)Math.random()*10;
+				bonusSpare[0] = (int)Math.random()*10;
 				int v = (int)Math.random()*10;
-				while(bonusSpaire[0] + v > 10)
+				while(bonusSpare[0] + v > 10)
 				{
 					v = (int)Math.random()*10;
 				}
-				bonusSpaire[1] = v;
+				bonusSpare[1] = v;
 			}
 				
 		}
@@ -128,7 +128,7 @@ public class Bowling {
 					// ...{4,6},{10,-}... ou ...{4,6},{5,2}...
 					score += sommeTuple + values[i+1][0]; // 4 + 6 + 10 ou  4 + 6 + 5
 				else // {4,6} Spaire ! et dernier coup
-					score += sommeTuple + bonusSpaire[0];
+					score += sommeTuple + bonusSpare[0];
 			}
 			else // ...{4,2},{5,1}...
 				score += sommeTuple;
