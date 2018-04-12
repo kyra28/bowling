@@ -37,7 +37,7 @@ public class Bowling {
 		}
 		
 		int sommeTupleFinal = values[9][0] + values[9][1];
-		if(sommeTupleFinal == 10) // dernier coup = strike ou spaire ?
+		if(sommeTupleFinal == 10) // dernier coup = strike ou spare ?
 		{
 			if(values[9][0] == 10) // dernier coup = strike ?
 			{
@@ -61,7 +61,7 @@ public class Bowling {
 				}
 			}
 			
-			else { // dernier coup = spaire
+			else { // dernier coup = spare
 				bonusSpare[0] = (int)Math.random()*10;
 				int v = (int)Math.random()*10;
 				while(bonusSpare[0] + v > 10)
@@ -106,7 +106,7 @@ public class Bowling {
 		for(int i = 0; i < values.length; i++)
 		{
 			sommeTuple = values[i][0] + values[i][1];
-			if(sommeTuple == 10) // {10,-} ou {4,6} Strike ou Spaire ?
+			if(sommeTuple == 10) // {10,-} ou {4,6} Strike ou spare ?
 			{
 				if(values[i][0]==10 && i != 9) // {10,-} Strike ! et pas le dernier coup
 				{
@@ -124,10 +124,10 @@ public class Bowling {
 						score += 20 + bonusStrike[1][0]; // 10 + 10 + 2 ou 10 + 10 + 10
 					}
 				}
-				else if(i != 9) // {4,6} Spaire ! et pas le dernier coup
+				else if(i != 9) // {4,6} spare ! et pas le dernier coup
 					// ...{4,6},{10,-}... ou ...{4,6},{5,2}...
 					score += sommeTuple + values[i+1][0]; // 4 + 6 + 10 ou  4 + 6 + 5
-				else // {4,6} Spaire ! et dernier coup
+				else // {4,6} spare ! et dernier coup
 					score += sommeTuple + bonusSpare[0];
 			}
 			else // ...{4,2},{5,1}...

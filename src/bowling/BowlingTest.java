@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class bowlingTest {
+public class BowlingTest {
 	
 	@Test
 	public void bowlingTestSum() {
-		Booling b = new Booling();
+		Bowling b = new Bowling();
 		b.add(10,0);
 		b.add(5,5);
 		b.add(10,0);
@@ -24,14 +24,14 @@ public class bowlingTest {
 	
 	@Test
 	public void bowlingTestSize() throws Exception {
-		Booling b = new Booling(15);
+		Bowling b = new Bowling(15);
 		if (b.values.length>10)
 			throw new Exception("10 groupes de valeurs max !");
 	}
 	
 	@Test
 	public void bowlingTestPositive() throws Exception {
-		Booling b = new Booling(10);
+		Bowling b = new Bowling(10);
 		for (int i = 0 ; i<b.values.length ; i++)
 		{
 			for (int j =0;j<b.values[i].length;j++)
@@ -44,7 +44,7 @@ public class bowlingTest {
 	
 	@Test
 	public void bowlingTest10() throws Exception {
-		Booling b = new Booling(10);
+		Bowling b = new Bowling(10);
 		for (int i =0; i<b.values.length; i++)
 		{
 			int sommeTuple = 0;
@@ -53,13 +53,13 @@ public class bowlingTest {
 				sommeTuple += b.values[i][j];
 			}
 			if (sommeTuple>10)
-				throw new Exception("somme tuple doit être inférieur à 10!");
+				throw new Exception("somme tuple doit ï¿½tre infï¿½rieur ï¿½ 10!");
 		}
 	}
 
 	@Test
 	public void bowlingTestScore() throws Exception {
-		Booling b = new Booling();
+		Bowling b = new Bowling();
 		b.add(10,0);
 		b.add(5,5);
 		b.add(10,0);
