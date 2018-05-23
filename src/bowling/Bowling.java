@@ -39,7 +39,7 @@ public class Bowling {
 		int sommeTupleFinal = values[9][0] + values[9][1];
 		if(sommeTupleFinal == 10) // dernier coup = strike ou spare ?
 		{
-			if(values[9][0] == 10) // dernier coup = strike ?
+			if(values[9][0] == 10) // dernier coup = strike  ?
 			{
 				bonusStrike[0][0] = (int)Math.random()*10;
 				int v = (int)Math.random()*10;
